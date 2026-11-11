@@ -5,6 +5,9 @@
 _TG_DIR="${BASH_SOURCE[0]%/*}"
 [ -f "$_TG_DIR/_root.sh" ] || _TG_DIR="$HOME/.claude/skills/todo-guard/scripts"
 . "$_TG_DIR/_root.sh"
+# 파이썬이 찍는 글을 UTF-8 로 낸다. 빠지면 윈도우에서 cp949 로 나가 모델이 깨진 글을 읽는다
+#   (2026-11-11 실제 세션에서 rule.sh add 출력이 깨져 「저장됐는지 확인 못 했다」고 답했다)
+export PYTHONIOENCODING=utf-8
 # 「항상 지킬 것」을 TODO.md 맨 위에 적어 둔다.
 #
 # 왜 TODO.md 인가
